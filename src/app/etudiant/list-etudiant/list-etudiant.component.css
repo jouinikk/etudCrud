@@ -1,0 +1,15 @@
+i:hover{
+    color:cadetblue;
+}
+i:active{
+    color: rgb(197, 39, 0);
+}
+a i{
+    color: black;
+}
+a i:hover{
+    color:cadetblue;
+}
+a i:active{
+    color:rgb(197, 39, 0) ;
+}

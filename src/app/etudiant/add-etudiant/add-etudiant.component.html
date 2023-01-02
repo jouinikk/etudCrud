@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="float: right;">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/list">List Students</a>
+        </li>  
+      </ul>
+    </div>
+    <button routerLink="/login" class="btn btn-outline-dark" (click)="logout()" style="margin-right: 10px;">logout</button>
+  </nav>    
+<div class="container">
+    <p class="display-5">Add Student</p>
+    <form [formGroup]="addStudent" (ngSubmit)="SaveData()">
+        <div class="form-group">
+            ID:
+            <input type="text" class="form-control" placeholder="Entrer nom" formControlName="id">
+        </div>
+        <div class="form-group">
+            Nom:
+            <input type="text" class="form-control" placeholder="Entrer nom" formControlName="nom">
+        </div>
+        <div class="form-group">
+            Prenom:
+            <input type="text" class="form-control"  placeholder="Entrer Prenom" formControlName="prenom">
+        </div>
+        <div class="form-group">
+            Class:
+            <input type="text" class="form-control"  placeholder="Entrer Class" formControlName="classe" >
+        </div><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div *ngIf="v" class="alert alert-success" role="alert">
+        added successfully!
+        <button (click)="close()" style="float: right; background-color: transparent; border-color: transparent;" class="close">X</button>
+    </div>
+    <div *ngIf="f" class="alert alert-danger" role="alert">
+        The Class should be either C1,C2 ou C3!
+        <button (click)="close()" style="float: right; background-color: transparent; border-color: transparent;" class="close">X</button>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<form [formGroup]="log" (submit)="sub()">
+    <span class="display-6">Welcome</span><br><br>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" formControlName="a">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="b">
+    </div><br>
+    <button type="submit" routerLink="/list" class="btn btn-dark">Login</button>
+    <div *ngIf="v" class="alert alert-danger" role="alert">
+        Wrong Login or Password
+    </div>
+</form>

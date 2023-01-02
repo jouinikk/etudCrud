@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="float: right;">
+      <li class="nav-item active">
+        <a class="nav-link"routerLink="/add">Add Student</a>
+      </li>
+    </ul>
+  </div>
+  <button routerLink="/login" class="btn btn-outline-dark" (click)="logout()" style="margin-right: 10px;">logout</button>
+</nav>
+<div class="container">
+<p class="display-6">List Etudiant</p>
+<table class="table table-light" style="text-align: center;">
+    <thead class="table table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Class</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Modify</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let etud of etudiantData">
+        <th scope="row">{{etud.id}}</th>
+        <td>{{etud.nom}}</td>
+        <td>{{etud.prenom}}</td>
+        <td>{{etud.classe}}</td>
+        <td><i class="bi bi-trash" (click)="delete(etud.id)"></i></td>
+        <td><a routerLink="/edit/{{etud.id}}"><i class="bi bi-pencil-square"></i></a></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
